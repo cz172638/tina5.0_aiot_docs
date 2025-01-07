@@ -1,0 +1,535 @@
+.
+├── A523
+│   └── Hardware硬件类文档
+│       ├── 硬件物料清单
+│       │   ├── A523 Android 13 功放选型和使用指导.pdf
+│       │   ├── A523_eMMC_支持列表.xls
+│       │   ├── A523_NAND_支持列表.xlsx
+│       │   ├── Allwinnertech A523 DRAM Support List V1.3.xls
+│       │   ├── Camera模组_支持列表.pdf
+│       │   ├── CTP_支持列表.pdf
+│       │   ├── eDP屏幕_支持列表.pdf
+│       │   ├── Input_Sensor_支持列表.pdf
+│       │   ├── LCD模组_支持列表.xlsx
+│       │   ├── Wi-Fi_BT_支持列表.pdf
+│       │   └── 最新物料支持列表请以全志客户服务平台物料库为准.png
+│       ├── 硬件设计
+│       │   ├── AIC8800D80_A523-A527_DEMO_20240108硬件参考设计资料包
+│       │   │   └── AIC8800D80_A523-A527_DEMO_20240108硬件参考设计资料包.7z
+│       │   ├── IBIS模型
+│       │   │   └── A523_IBIS_20230321.7z
+│       │   ├── PCB参考
+│       │   │   ├── SoC套片PCB封装库
+│       │   │   │   └── A523_SOC_Symbol.zip
+│       │   │   └── 硬件DDR模板&叠层文件
+│       │   │       ├── A523-REF-DDR4-16X2-S4L-V1-0
+│       │   │       │   ├── A523-REF-DDR4-16X2-S4L-V1-0-20221107.DSN
+│       │   │       │   ├── A523-REF-DDR4-16X2-S4L-V1-0-20221107.pdf
+│       │   │       │   ├── A523-REF-DDR4-16X2-S4L-V1-0.brd
+│       │   │       │   ├── A523-REF-DDR4-16X2-S4L-V1-0_pads.asc
+│       │   │       │   ├── A523-REF-DDR4-16X2-S4L-V1-0_pads.pcb
+│       │   │       │   └── AW_PCB-Stackup_4L_V1.0-wxf.xls
+│       │   │       ├── A523-REF-DDR4-16X2-S4L-V2-0
+│       │   │       │   ├── A523-REF-DDR4-16X2-S4L-V2-0-20221107.DSN
+│       │   │       │   ├── A523-REF-DDR4-16X2-S4L-V2-0-20221107.pdf
+│       │   │       │   ├── A523-REF-DDR4-16X2-S4L-V2-0.brd
+│       │   │       │   ├── A523-REF-DDR4-16X2-S4L-V2-0_pads.asc
+│       │   │       │   ├── A523-REF-DDR4-16X2-S4L-V2-0_pads.pcb
+│       │   │       │   └── AW_PCB-Stackup_4L_V1.0-wxf.xls
+│       │   │       ├── A523_REF_LPDDR3_256ball_64X1_4L_V1_0(C0201)
+│       │   │       │   ├── A523_REF_LPDDR3_256ball_64X1_V1_0-C0201_20230222.DSN
+│       │   │       │   ├── A523_REF_LPDDR3_256ball_64X1_V1_0-C0201.brd
+│       │   │       │   ├── A523_REF_LPDDR3_256ball_64X1_V1_0-C0201-DSN-20230222.pdf
+│       │   │       │   ├── A523_REF_LPDDR3_256ball_64X1_V1_0-C0201_pads.asc
+│       │   │       │   └── AW_PCB-Stackup_4L_V1.0-wxf.xls
+│       │   │       ├── A523_REF_LPDDR3_256BALL_64X1_4L_V1_0(C0402)
+│       │   │       │   ├── A523_REF_LPDDR3_256BALL_64X1_V1_0_20230217.DSN
+│       │   │       │   ├── A523_REF_LPDDR3_256BALL_64X1_V1_0.brd
+│       │   │       │   ├── A523_REF_LPDDR3_256BALL_64X1_V1_0_pads.asc
+│       │   │       │   ├── A523_REF_LPDDR3_256BALL_64X1_V1_0.pdf
+│       │   │       │   └── AW_PCB-Stackup_4L_V1.0-wxf.xls
+│       │   │       ├── A523_REF_LPDDR3_256ball_64X1_6L_V3_1-C0201
+│       │   │       │   ├── A523_REF_LPDDR3_256ball_64X1_6L_V3_1-C0201_0828_1705.brd
+│       │   │       │   ├── A523_REF_LPDDR3_256ball_64X1_6L_V3_1-C0201_0828_1705_pads.asc
+│       │   │       │   ├── A523_REF_LPDDR3_256BALL_64X1_6L_V3_1-C0201-PCB叠层规范_V1.2.xls
+│       │   │       │   ├── A523_REF_LPDDR3_256BALL_64X1_V3_1_0201-20230717.DSN
+│       │   │       │   ├── DDR模板导入注意事项20240704-必看！！！.doc
+│       │   │       │   └── 修改记录.txt
+│       │   │       ├── A523_REF_LPDDR3_256ball_64X1_8L_V1_0-C0201
+│       │   │       │   ├── A523_REF_LPDDR3_256BALL_64X1_8L_V1_0_0201-20230426.DSN
+│       │   │       │   ├── A523_REF_LPDDR3_256ball_64X1_8L_V1_0-C0201_0616_1632.brd
+│       │   │       │   ├── A523_REF_LPDDR3_256ball_64X1_8L_V1_0-C0201_0616_1632_pads.asc
+│       │   │       │   ├── A523_REF_LPDDR3_256ball_64X1_8L_V1_0-C0201_0616_1632_pads.pcb
+│       │   │       │   └── AW_PCB-Stackup_8L_1mm_V1.0-20230313.xls
+│       │   │       ├── A523_REF_LPDDR3_256BALL_64X1_V3_0_0201
+│       │   │       │   ├── A523_REF_LPDDR3_256ball_64X1_6L_V3_0-C0201_0718_1407.brd
+│       │   │       │   ├── A523_REF_LPDDR3_256ball_64X1_6L_V3_0-C0201_0718_1407_pads.asc
+│       │   │       │   ├── A523_REF_LPDDR3_256BALL_64X1_6L_V3_0-C0201-PCB叠层规范_V1.2.xls
+│       │   │       │   ├── A523_REF_LPDDR3_256BALL_64X1_V3_0_0201-20230717.DSN
+│       │   │       │   └── DDR模板导入注意事项20240704-必看！！！.doc
+│       │   │       ├── A523-REF-LPDDR4-342BALL-S6L-V2-0
+│       │   │       │   ├── 6L_1.0mm叠层阻抗图.xlsx
+│       │   │       │   ├── A523_REF_LPDDR4_FBGA342BALL_64X1_S6L_V2_0.asc
+│       │   │       │   ├── A523_REF_LPDDR4_FBGA342BALL_64X1_S6L_V2_0.brd
+│       │   │       │   ├── A523_REF_LPDDR4_FBGA342BALL_64X1_S6L_V2_0.DSN
+│       │   │       │   ├── A523_REF_LPDDR4_FBGA342BALL_64X1_S6L_V2_0.pdf
+│       │   │       │   └── Changlist_20240327.txt
+│       │   │       ├── A523-REF-LPDDR4-4X-32X1-S6L-V1-0(C0201)
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S6L-V1-0-20221014.DSN
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S6L-V1-0-20221014.pdf
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S6L-V1-0.brd
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S6L-V1-0_pads.asc
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S6L-V1-0.pcb
+│       │   │       │   └── AW_PCB-Stackup_6L_1mm-1.6mm_V1.0-20221101.xls
+│       │   │       ├── A523-REF-LPDDR4-4X-32X1-S6L-V2-0(C0402)
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S6L-V2-0-20221014.DSN
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S6L-V2-0-20221014.pdf
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S6L-V2-0.brd
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S6L-V2-0_pads.asc
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S6L-V2-0_pads.pcb
+│       │   │       │   └── AW_PCB-Stackup_6L_1mm-1.6mm_V1.0-20221101.xls
+│       │   │       ├── A523-REF-LPDDR4-4X-32X1-S8L-V1-0
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S8L-V1-0-20221014.DSN
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S8L-V1-0.asc
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S8L-V1-0.brd
+│       │   │       │   ├── A523-REF-LPDDR4-4X-32X1-S8L-V1-0.pdf
+│       │   │       │   └── AW_PCB-Stackup_8L_1mm_V1.0-20230313.xls
+│       │   │       ├── AW1890-A523_DDR走线规则.xlsx
+│       │   │       └── DDR模板导入&检查操作手册V1.0.pdf
+│       │   ├── PMIC搭配选型说明
+│       │   │   └── A523&A527&T527产品方案之AXP电源方案(AXP717B&AXP717C)选型参考.xlsx
+│       │   ├── 原理图
+│       │   │   ├── 开发板资料
+│       │   │   │   ├── 开发板BOM表
+│       │   │   │   │   └── A523-EVB-AXP717C-LPDDR4-4X-BOM-20221117.xlsx
+│       │   │   │   ├── 开发板PCB
+│       │   │   │   │   └── A523-EVB-AXP717C-LPDDR4-4X-32X1-V1-0.brd
+│       │   │   │   ├── 开发板原理图
+│       │   │   │   │   ├── A523-EVB-AXP717C-LPDDR4-4X-32X1-V1-0-20221115.DSN
+│       │   │   │   │   └── A523-EVB-AXP717C-LPDDR4-4X-32X1-V1-0-20221115.pdf
+│       │   │   │   └── 开发板用户指南
+│       │   │   │       ├── A523-EVB-AXP717C-LPDDR4-4X-32X1-V1-0-20221115.pdf
+│       │   │   │       ├── A523-EVB-AXP717C-LPDDR4-4X-32X1-V1-0.pdf
+│       │   │   │       └── A523_EVB开发板用户指南_V1.0.pdf
+│       │   │   └── 标案原理图
+│       │   │       ├── a523_std_axp717c_axp323_lpddr4_240712.pdf
+│       │   │       ├── A523_STD_AXP717C_AXP323_LPDDR4_4X_32X1_V2-4_240712.DSN
+│       │   │       └── A523-STD-Changelist-20240722.txt
+│       │   ├── 硬件checklist
+│       │   │   ├── A523原理图设计Checklist V1.0.xlsx
+│       │   │   └── 全志客户PCB设计Checklist_V2.0.xlsx
+│       │   └── 设计指南
+│       │       ├── DDR Layout指南
+│       │       │   └── A523 DDR layout设计指南-V1.1-0403.pdf
+│       │       └── 硬件设计指南
+│       │           ├── A523 PCB设计指南-V1.1.pdf
+│       │           ├── A523硬件设计指南_V1.6-240712.pdf
+│       │           └── 全志平台A系列ESD防护设计及调试指导 V1.0_ 20240410.pdf
+│       └── 芯片手册
+│           ├── A523_Brief_V1.2.pdf
+│           ├── A523_Datasheet_V1.4.pdf
+│           ├── A523_PINOUT_V1.4.xlsx
+│           ├── A523_User_Manual_V1.4.pdf
+│           ├── AXP323_Brief_20221104.pdf
+│           ├── AXP323_Datasheet_V1.1_cn.pdf
+│           ├── AXP323_Datasheet_V1.1_en.pdf
+│           ├── AXP519_Brief_20230919.pdf
+│           ├── AXP519_Datasheet_V1.0_cn.pdf
+│           ├── AXP717C_Brief_20230307.pdf
+│           └── AXP717C_Datasheet_V1.1_en.pdf
+├── A527
+│   ├── Benchmark
+│   │   └── A527_Multimedia_Codec_Benchmark.pdf -> ../../Software 软件类文档/基础组件开发指南/Benchmark/A527_Multimedia_Codec_Benchmark.pdf
+│   └── Hardware硬件类文档
+│       ├── 硬件物料清单
+│       │   ├── A527 Android 13 功放选型和使用指导V1_0.pdf
+│       │   ├── Camera模组_支持列表.pdf
+│       │   ├── GPS_支持列表.pdf
+│       │   ├── Input_Sensor_支持列表.pdf
+│       │   ├── LCD模组_支持列表.xlsx
+│       │   ├── TP模组_支持列表.xlsx
+│       │   ├── Wi-Fi_BT_支持列表.pdf
+│       │   └── 最新物料支持列表请以全志客户服务平台物料库为准.png
+│       ├── 硬件设计
+│       │   ├── AIC8800D80_A523-A527_DEMO_20240108硬件参考设计资料包
+│       │   │   └── AIC8800D80_A523-A527_DEMO_20240108硬件参考设计资料包.7z
+│       │   ├── PCB参考
+│       │   │   ├── SoC套片PCB封装库
+│       │   │   │   ├── BGA664P50B1700_1700H180
+│       │   │   │   │   ├── BGA664P50B1700_1700H180.asc
+│       │   │   │   │   ├── BGA664P50B1700_1700H180.brd
+│       │   │   │   │   └── BGA664P50B1700_1700H180.xls
+│       │   │   │   ├── qfn20p40b300_300h75
+│       │   │   │   │   ├── qfn20p40b300_300h75.asc
+│       │   │   │   │   ├── qfn20p40b300_300h75.brd
+│       │   │   │   │   └── QFN20P40B300_300H75.xlsx
+│       │   │   │   └── QFN53P40B600_600H75
+│       │   │   │       ├── QFN53P40B600_600H75.asc
+│       │   │   │       ├── QFN53P40B600_600H75.brd
+│       │   │   │       └── QFN53P40B600_600H75.xls
+│       │   │   └── 硬件DDR模板、叠层文件
+│       │   │       ├── A527-REF-DDR4-16X2-S4L-V2-0
+│       │   │       │   ├── A527-REF-DDR4-16X2-S4L-V2-0-20231211.DSN
+│       │   │       │   ├── A527-REF-DDR4-16X2-S4L-V2-0-20231211.pdf
+│       │   │       │   ├── A527-REF-DDR4-16X2-S4L-V2-0.brd
+│       │   │       │   ├── A527-REF-DDR4-16X2-S4L-V2-0_pads.asc
+│       │   │       │   ├── A527-REF-DDR4-16X2-S4L-V2-0_pads.pcb
+│       │   │       │   └── Stackup_4L.xls
+│       │   │       ├── A527-REF-DDR4-16X2-S6L-V2-0
+│       │   │       │   ├── A527-REF-DDR4-16X2-S6L-V2-0-20231211.DSN
+│       │   │       │   ├── A527-REF-DDR4-16X2-S6L-V2-0-20231211.pdf
+│       │   │       │   ├── A527-REF-DDR4-16X2-S6L-V2-0.brd
+│       │   │       │   ├── A527-REF-DDR4-16X2-S6L-V2-0_pads.asc
+│       │   │       │   ├── A527-REF-DDR4-16X2-S6L-V2-0_pads.pcb
+│       │   │       │   └── A527-REF-DDR4-16X2-S6L-V2-0-叠层.xls
+│       │   │       ├── A527-REF-DDR4-16X2-S8L-V2-0
+│       │   │       │   ├── A527_PCB-Stackup_8L——AW-974-20231110.xls
+│       │   │       │   ├── A527-REF-DDR4-16X2-S8L-V1-0-20231215.DSN
+│       │   │       │   ├── A527-REF-DDR4-16X2-S8L-V1-0-20231215.pdf
+│       │   │       │   ├── A527-REF-DDR4-16X2-S8L-V2-0.brd
+│       │   │       │   ├── A527-REF-DDR4-16X2-S8L-V2-0_pads.asc
+│       │   │       │   ├── A527-REF-DDR4-16X2-S8L-V2-0_pads.pcb
+│       │   │       │   └── DDR模板设计重点说明.doc
+│       │   │       ├── A527_REF_LPDDR3_256BALL_64X1_S6L_0201_V3_0
+│       │   │       │   ├── A523_REF_LPDDR3_256BALL_64X1_6L_V3_0-C0201-PCB叠层规范_V1.2-4mil.xls
+│       │   │       │   ├── A527_REF_LPDDR3_256BALL_64X1_S6L_0201_V3_0_20230817.DSN
+│       │   │       │   ├── A527_REF_LPDDR3_256BALL_64X1_S6L_0201_V3_0_20230817.pdf
+│       │   │       │   ├── A527_REF_LPDDR3_256ball_64X1_S6L_V3_0-C0201.brd
+│       │   │       │   ├── A527_REF_LPDDR3_256ball_64X1_S6L_V3_0-C0201_pads.asc
+│       │   │       │   └── DDR模板导入注意事项20240704-必看！！！.doc
+│       │   │       ├── A527-REF-LPDDR4-4X-32X1-6L-V1-0
+│       │   │       │   ├── A527-REF-LPDDR4-4X-32X1-S6L-V1-0-20221203.DSN
+│       │   │       │   ├── A527-REF-LPDDR4-4X-32X1-S6L-V1-0-20221203.pdf
+│       │   │       │   ├── A527-REF-LPDDR4-4X-32X1-S6L-V1-0.asc
+│       │   │       │   ├── A527-REF-LPDDR4-4X-32X1-S6L-V1-0.brd
+│       │   │       │   ├── A527-REF-LPDDR4-4X-32X1-S6L-V1-0.pcb
+│       │   │       │   └── AW_PCB-Stackup_6L_1mm-1.6mm_V1.0-20221101.xls
+│       │   │       └── DDR模板导入&检查操作手册V1.0.pdf
+│       │   ├── PMIC搭配选型说明
+│       │   │   └── A523&A527&T527产品方案之AXP电源方案(AXP717B&AXP717C)选型参考.xlsx
+│       │   ├── 原理图
+│       │   │   ├── 原型机资料
+│       │   │   │   ├── 原型机BOM
+│       │   │   │   │   └── 原型机BOM.xlsx
+│       │   │   │   ├── 原型机PCB
+│       │   │   │   │   └── A527_draft_V1_0.brd
+│       │   │   │   └── 原型机原理图
+│       │   │   │       ├── A527-PRO3-AXP717C-LPDDR4-4X-32X1-V1_0.DSN
+│       │   │   │       └── A527-PRO3-AXP717C-LPDDR4-4X-32X1-V1_0.pdf
+│       │   │   ├── 子板原理图
+│       │   │   │   ├── SUB_GPS_20240407.DSN
+│       │   │   │   └── SUB_GPS_20240407.pdf
+│       │   │   └── 标案原理图
+│       │   │       ├── a527-std-axp717c-lpddr4-4x-32x1_240712.pdf
+│       │   │       ├── A527-STD-AXP717C-LPDDR4-4X-32X1-V1_3-240712.DSN
+│       │   │       └── Changelist-20240722.txt
+│       │   ├── 硬件checklist
+│       │   │   └── 原理图checklist
+│       │   │       └── A527原理图设计Checklist -V1.0.xlsx
+│       │   └── 设计指南
+│       │       ├── A527 PCB设计指南-V1.1.pdf
+│       │       └── A527硬件设计指南_V1.2.pdf
+│       └── 芯片手册
+│           ├── A527_Brief_V0.92.pdf
+│           ├── A527_Datasheet_V0.93.pdf
+│           ├── A527_PINOUT_V0.92.xlsx
+│           ├── A527_User_Manual_V0.94.pdf
+│           ├── AXP2601_Datasheet_V1.0_cn.pdf
+│           ├── AXP323_Brief_20221104.pdf
+│           ├── AXP323_Datasheet_V1.1_cn.pdf
+│           ├── AXP323_Datasheet_V1.1_en.pdf
+│           ├── AXP519_Brief_20230919.pdf
+│           ├── AXP519_Datasheet_V1.0_cn.pdf
+│           ├── AXP717C_Brief_20230307.pdf
+│           └── AXP717C_Datasheet_V1.1_en.pdf
+├── AIOT_Linux_SDK_Note.md -> Release Note 发布声明/AIOT_Linux_SDK_Note.md
+├── AW_AIOT_Linux_Software_Development_Guide_CN.pdf -> Software 软件类文档/基础组件开发指南/AW_AIOT_Linux_Software_Development_Guide_CN.pdf
+├── docs_list.txt
+├── Product 量产指导文档
+│   └── 产线指南
+│       ├── Crashdump_使用指南.pdf
+│       ├── eMMC硬件_排查指南.pdf
+│       ├── IO类量产问题_排查指南.pdf
+│       ├── Linux_eMMC物料_验证指南.pdf
+│       ├── MMC量产问题_排查指南.pdf
+│       ├── 全志T系列不良品分析流程-V1_0.pdf
+│       ├── 全志T系列产线硬件问题快速排查指南-V1_0.pdf
+│       ├── 全志T系列生产指南-V1_0.pdf
+│       ├── 全志T系列试量产稳定性checklist-V1_0.pdf
+│       ├── 全志平台生产指南之ESD基础及其防护V2.0.pdf
+│       ├── 启动烧写类量产问题_排查指南.pdf
+│       ├── 安全类量产问题_排查指南.pdf
+│       ├── 接口类量产问题_排查指南.pdf
+│       ├── 显示量产问题快速排查指南.pdf
+│       ├── 显示问题案例FAE详细指导指南.pdf
+│       └── 量产系统稳定性问题_排查指南.pdf
+├── Release Note 发布声明
+│   └── AIOT_Linux_SDK_Note.md
+├── Software 软件类文档
+│   ├── SDK模块开发指南
+│   │   ├── AMP
+│   │   │   └── Linux_AMP_开发指南.pdf
+│   │   ├── AUDIO
+│   │   │   └── Linux_Audio_开发指南.pdf
+│   │   ├── AWlink
+│   │   │   └── T527_Linux_AWlink_开发指南.pdf
+│   │   ├── CAMERA
+│   │   │   ├── Linux_ISP_开发指南.pdf
+│   │   │   └── Linux_MIPI_CSI_开发指南.pdf
+│   │   ├── CE
+│   │   │   └── Linux_CE_开发指南.pdf
+│   │   ├── CLK
+│   │   │   └── Linux_CCU_开发指南.pdf
+│   │   ├── DISPLAY (DISP2)
+│   │   │   ├── AW_Display_开发指南.pdf
+│   │   │   ├── AW_Display_配置使用指南.pdf
+│   │   │   ├── AW_EDP_开发指南.pdf
+│   │   │   ├── AW_G2D_开发指南.pdf
+│   │   │   ├── AW_HDMI20_开发指南.pdf
+│   │   │   ├── AW_LCD_开发指南.pdf
+│   │   │   └── eDP屏幕_支持列表.pdf
+│   │   ├── DISPLAY (DRM)
+│   │   │   ├── AW_DRM屏幕适配_调试指南.pdf
+│   │   │   ├── AW_User_Guide_Linux_DRM_CN.pdf
+│   │   │   └── Linux_HDMI20_DRM_开发指南.pdf
+│   │   ├── DMA
+│   │   │   └── Linux_DMAC_开发指南.pdf
+│   │   ├── DVFS
+│   │   │   ├── Linux_CPUFREQ_开发指南.pdf
+│   │   │   ├── Linux_CPUHOTPLUG_开发指南.pdf
+│   │   │   └── Linux_CPUIDLE_开发指南.pdf
+│   │   ├── Ethernet
+│   │   │   └── Linux_EMAC_开发指南.pdf
+│   │   ├── G2D
+│   │   │   └── Linux_G2D_开发指南.pdf
+│   │   ├── GPADC
+│   │   │   └── Linux_GPADC_开发指南.pdf
+│   │   ├── GPU
+│   │   │   └── Linux_GPU_开发指南.pdf
+│   │   ├── IR
+│   │   │   ├── Linux_IR_RX_开发指南.pdf
+│   │   │   └── Linux_IR_TX_开发指南.pdf
+│   │   ├── LEDC
+│   │   │   └── Linux_LEDC_开发指南.pdf
+│   │   ├── Linux_BSP独立仓库_开发指南.pdf
+│   │   ├── Linux_Device_Tree_使用指南.pdf
+│   │   ├── Linux_SPL-PUB_开发指南.pdf
+│   │   ├── LRADC
+│   │   │   └── Linux_LRADC_开发指南.pdf
+│   │   ├── MMC
+│   │   │   ├── Linux_MMC_开发指南.pdf
+│   │   │   └── Linux_MMC离线烧录_开发指南.pdf
+│   │   ├── NAND
+│   │   │   ├── Linux_Nand_开发指南.pdf
+│   │   │   ├── Linux_SLCNAND_UBI_开发指南.pdf
+│   │   │   ├── Linux_SLCNAND_UBI离线烧录_开发指南.pdf
+│   │   │   ├── Linux_SPINAND_UBI离线烧录_开发指南.pdf
+│   │   │   └── Linux_SPINAND_开发指南.pdf
+│   │   ├── NPU模块开发指南
+│   │   │   ├── NPU_RuntimeAPI_参考指南.pdf
+│   │   │   ├── NPU_开发环境部署_参考指南.pdf
+│   │   │   ├── NPU_快速入门_开发指南.pdf
+│   │   │   ├── NPU_模型部署_开发指南.pdf
+│   │   │   ├── NPU_算子支持列表.pdf
+│   │   │   └── T527_NPU_常见网络性能_测试报告.pdf
+│   │   ├── Pin-Ctrl
+│   │   │   └── Linux_GPIO_开发指南.pdf
+│   │   ├── PMIC
+│   │   │   └── Linux_PMIC_开发指南.pdf
+│   │   ├── PWM
+│   │   │   └── Linux_PWM_开发指南.pdf
+│   │   ├── RTC
+│   │   │   ├── Linux_RTC_开发指南.pdf
+│   │   │   └── Linux_外部RTC_开发指南.pdf
+│   │   ├── RTOS模块开发指南
+│   │   │   └── RTOS_异构快启_开发指南.pdf
+│   │   ├── SECURE
+│   │   │   └── Linux_安全_开发指南.pdf
+│   │   ├── SID
+│   │   │   └── Linux_SID_开发指南.pdf
+│   │   ├── SPI
+│   │   │   └── Linux_SPI_NG_开发指南.pdf
+│   │   ├── STANDBY
+│   │   │   └── Linux_Standby_开发指南.pdf
+│   │   ├── THERMAL
+│   │   │   └── Linux_Thermal_开发指南.pdf
+│   │   ├── TIMER
+│   │   │   └── Linux_TIMER_开发指南.pdf
+│   │   ├── TPADC
+│   │   │   └── Linux_TPADC_开发指南.pdf
+│   │   ├── TWI
+│   │   │   └── Linux_TWI_开发指南.pdf
+│   │   ├── UART
+│   │   │   └── Linux_UART_开发指南.pdf
+│   │   ├── UBOOT
+│   │   │   └── Linux_U-Boot_开发指南.pdf
+│   │   ├── USB
+│   │   │   ├── Linux_USB2_开发指南.pdf
+│   │   │   └── Linux_USB3_开发指南.pdf
+│   │   └── VIDEO
+│   │       ├── Linux_Decoder_开发指南.pdf
+│   │       ├── Linux_DI_开发指南.pdf
+│   │       ├── Linux_Encoder_开发指南.pdf
+│   │       └── Linux_Gstreamer_开发指南.pdf
+│   └── 基础组件开发指南
+│       ├── ApplicationNote
+│       │   ├── Tina_Linux_Qt_使用指南.pdf
+│       │   └── Tina_Linux_异构通信框架_开发指南.pdf
+│       ├── AW_AIOT_Linux_Software_Development_Guide_CN.pdf
+│       ├── Benchmark
+│       │   ├── A527_Multimedia_Codec_Benchmark.pdf
+│       │   ├── AW_T527_PCIE_Benchmark_CN.pdf
+│       │   ├── T527_AWLINK_Benchmark_CN.pdf
+│       │   ├── T527_Ethernet_Benchmark_CN.pdf
+│       │   └── T527_Multimedia_Codec_Benchmark.pdf
+│       ├── buildroot
+│       │   └── Tina_Linux_buildroot_使用指南.pdf
+│       ├── Camera
+│       │   └── AW_AIOT_Linux_Camera_开发指南.pdf
+│       ├── Debian
+│       │   ├── AW_AIOT_Linux_debian_开发指南.pdf
+│       │   └── AW_Developer_Guide_Debian_Docker_CN.pdf
+│       ├── Graphics
+│       │   ├── AW_Developer_Guide_Buildroot_Weston_CN.pdf
+│       │   ├── AW_Developer_Guide_Linux_Graphics_CN.pdf
+│       │   ├── AW_DRM屏幕适配_调试指南.pdf -> ../../SDK模块开发指南/DISPLAY (DRM)/AW_DRM屏幕适配_调试指南.pdf
+│       │   ├── AW_User_Guide_Linux_DRM_CN.pdf -> ../../SDK模块开发指南/DISPLAY (DRM)/AW_User_Guide_Linux_DRM_CN.pdf
+│       │   └── Linux_HDMI20_DRM_开发指南.pdf -> ../../SDK模块开发指南/DISPLAY (DRM)/Linux_HDMI20_DRM_开发指南.pdf
+│       ├── Multimedia
+│       │   ├── Linux_CedarE_开发指南.pdf
+│       │   ├── Linux_CedarX_开发指南.pdf
+│       │   ├── Linux_Gstreamer_开发指南.pdf -> ../../SDK模块开发指南/VIDEO/Linux_Gstreamer_开发指南.pdf
+│       │   ├── Tina_Linux_多媒体编码_开发指南.pdf
+│       │   └── Tina_Linux_多媒体解码_开发指南.pdf
+│       ├── Others
+│       ├── Recovery
+│       │   └── Tina_Linux_OTA_开发指南.pdf
+│       ├── SECURE
+│       │   └── Tina_Linux_安全_开发指南.pdf
+│       ├── Sundry
+│       │   ├── Tina_Linux_syslog_使用指南.pdf
+│       │   ├── Tina_Linux_存储_开发指南.pdf
+│       │   ├── Tina_Linux_打包流程_使用指南.pdf
+│       │   ├── Tina_Linux_系统裁剪_开发指南.pdf
+│       │   ├── Tina_Linux_系统软件_开发指南.pdf
+│       │   └── Tina_Linux_配置_开发指南.pdf
+│       ├── Test
+│       │   └── Tina_Linux_量产测试_使用指南.pdf
+│       └── Wifibt
+│           ├── Tina_Linux_Wi-Fi_BT_射频测试指引.pdf
+│           ├── Tina_Linux_Wi-Fi_常见问题与调试指南.pdf
+│           ├── Tina_Linux_Wi-Fi_开发指南.pdf
+│           ├── Tina_Linux_Wi-Fi_抓包使用指南.pdf
+│           ├── Tina_Linux_Wi-Fi_模组移植指南.pdf
+│           ├── Tina_Linux_蓝牙_常见问题与调试指南.pdf
+│           ├── Tina_Linux_蓝牙_开发指南.pdf
+│           └── Tina_Linux_蓝牙_模组移植指南.pdf
+└── T527
+    ├── Benchmark
+    │   ├── AW_T527_PCIE_Benchmark_CN.pdf -> ../../Software 软件类文档/基础组件开发指南/Benchmark/AW_T527_PCIE_Benchmark_CN.pdf
+    │   ├── T527_AWLINK_Benchmark_CN.pdf -> ../../Software 软件类文档/基础组件开发指南/Benchmark/T527_AWLINK_Benchmark_CN.pdf
+    │   ├── T527_Ethernet_Benchmark_CN.pdf -> ../../Software 软件类文档/基础组件开发指南/Benchmark/T527_Ethernet_Benchmark_CN.pdf
+    │   └── T527_Multimedia_Codec_Benchmark.pdf -> ../../Software 软件类文档/基础组件开发指南/Benchmark/T527_Multimedia_Codec_Benchmark.pdf
+    └── Hardware硬件类文档
+        ├── 硬件物料清单
+        │   ├── Camera模组_支持列表.pdf
+        │   ├── DRAM兼容性测试指南V1.21.pdf
+        │   ├── DRAM兼容性验收标准V2.0.pdf
+        │   ├── eDP屏幕_支持列表.pdf
+        │   ├── Input_Sensor_支持列表.pdf
+        │   ├── LCD模组_支持列表.xlsx
+        │   ├── TP模组_支持列表.xlsx
+        │   ├── Wi-Fi_BT_支持列表.pdf
+        │   ├── 最新物料支持列表请以全志客户服务平台物料库为准.png
+        │   └── 物料验证相关文档与工具.7z
+        ├── 硬件设计
+        │   ├── DRAM Layout Template
+        │   │   ├── T527_17x17_fccsp-MSAP-pindelay.csv
+        │   │   ├── T527-REF-DDR3-16X2-S4L-V1-0.zip
+        │   │   ├── T527-REF-DDR4-16X2-4L-V2-0.zip
+        │   │   ├── T527_REF_LPDDR3_256BALL_64X1_S6L_V4_0_0201.zip
+        │   │   ├── T527-REF-LPDDR4-32X1-4L-V1-0.zip
+        │   │   └── T527-REF-LPDDR4-4X-32X1-6L-V1-0.zip
+        │   ├── IBIS模型
+        │   │   ├── t527_ddr3_allwinner.ibs
+        │   │   ├── t527_ddr4_allwinner.ibs
+        │   │   ├── t527_lpddr3_allwinner.ibs
+        │   │   ├── t527_lpddr4_allwinner.ibs
+        │   │   └── t527_lpddr4x_allwinner.ibs
+        │   ├── PMIC搭配选型说明
+        │   │   └── A523&A527&T527产品方案之AXP电源方案(AXP717B&AXP717C)选型参考.xlsx
+        │   ├── 参考设计
+        │   │   ├── T527-DEMO
+        │   │   │   ├── T527-DEMO-AXP717B-LPDDR4-32X1-V1-0_1213.brd
+        │   │   │   ├── T527-DEMO-AXP717B-LPDDR4-32X1_V1_0-20231124-BOM.xls
+        │   │   │   ├── T527-DEMO-AXP717B-LPDDR4-32X1-V1-0_20231213-位号图.pdf
+        │   │   │   ├── T527-DEMO-AXP717B-LPDDR4-32X1-V1-0-gerber.zip
+        │   │   │   ├── T527-DEMO-AXP717B-LPDDR4-32X1-V1-0-SMD.zip
+        │   │   │   ├── T527-DEMO-AXP717B-LPDDR4-32X1_V1_1-20240123.DSN
+        │   │   │   ├── T527-DEMO-AXP717B-LPDDR4-32X1_V1_1-20240123-原理图.pdf
+        │   │   │   └── T527-Demo-AXP717B-LPDDR4-32X1_V1_1 changelist.xlsx
+        │   │   ├── T527-Demo硬件操作指南_V1.0-20231123.pdf
+        │   │   ├── T527_SOC_LIBRARY.zip
+        │   │   ├── T527-子板
+        │   │   │   ├── SUB_DISPLAY_BOARD
+        │   │   │   │   ├── SUB_DISPLAY_BOARD_V1_0_20230516.DSN
+        │   │   │   │   ├── SUB_DISPLAY_BOARD_V1_0_20230516-原理图.pdf
+        │   │   │   │   ├── SUB_DISPLAY_BOARD_V1_0.brd
+        │   │   │   │   └── SUB_DISPLAY_BOARD_V1_0-位号图.pdf
+        │   │   │   ├── SUB_GM7123C_RGB_TO_VGA
+        │   │   │   │   ├── SUB_GM7123C_RGB TO VGA_V1_0-0717-1408.brd
+        │   │   │   │   ├── SUB_GM7123C_RGB TO VGA_V1_0-0717-1408-位号图.pdf
+        │   │   │   │   ├── SUB_GM7123C_RGB TO VGA_V1_0_20230715.DSN
+        │   │   │   │   └── SUB_GM7123C_RGB TO VGA_V1_0_20230715-原理图.pdf
+        │   │   │   ├── SUB_NVP6158C_DVP
+        │   │   │   │   ├── SUB_NVP6158C_DVP_V1_0_0423_1359.brd
+        │   │   │   │   ├── SUB_NVP6158C_DVP_V1_0_0423_1359-位号图.pdf
+        │   │   │   │   ├── SUB_NVP6158C_DVP_V1_0_20231218.DSN
+        │   │   │   │   └── SUB_NVP6158C_DVP_V1_0_20231218-原理图.pdf
+        │   │   │   ├── SUB_RTL8211_GPHY
+        │   │   │   │   ├── SUB_RTL8211_GPHY_V1_0_0426-1425.DSN
+        │   │   │   │   ├── SUB_RTL8211_GPHY_V1_0_0426-1425-原理图.pdf
+        │   │   │   │   ├── SUB_RTL8211_GPHY_V1_0_0427-1542.brd
+        │   │   │   │   └── SUB_RTL8211_GPHY_V1_0_0427-1542-位号图.pdf
+        │   │   │   ├── SUB_TP2815_MCSI
+        │   │   │   │   ├── SUB_TP2815_MCSI_V1_0_0418_1649.brd
+        │   │   │   │   ├── SUB_TP2815_MCSI_V1_0_0418_1649-位号图.pdf
+        │   │   │   │   ├── SUB_TP2815_MCSI_V1_1_20230418.DSN
+        │   │   │   │   └── SUB_TP2815_MCSI_V1_1_20230418-原理图.pdf
+        │   │   │   └── 子板原理图功能说明_V1_0.pdf
+        │   │   ├── T527-标案
+        │   │   │   ├── T527-STD-AXP717B-LPDDR4-32X1_V1_2-20240123.DSN
+        │   │   │   ├── T527-STD-AXP717B-LPDDR4-32X1_V1_2-20240123-原理图.pdf
+        │   │   │   └── T527-STD-AXP717B-LPDDR4-32X1_V1_2 changelist.xlsx
+        │   │   └── T527-车载工控商显电源方案-V1.0.pdf
+        │   ├── 硬件设计checklist
+        │   │   ├── T527车载方案软硬件稳定性检查checklistV1.0-1123.doc
+        │   │   └── 车载方案设计Checklist_V2.3.xlsx
+        │   └── 设计指南
+        │       ├── T527_Demo_Board场景分量功耗测试-V1_0.pdf
+        │       ├── T527-PCB设计指南-V1_0-20231129.pdf
+        │       └── T527硬件设计指南_V0_96-20240123.pdf
+        └── 芯片手册
+            ├── AXP2601_Datasheet_V1.0_cn.pdf
+            ├── AXP323_Brief_20221104.pdf
+            ├── AXP323_Datasheet_V1.1_cn.pdf
+            ├── AXP323_Datasheet_V1.1_en.pdf
+            ├── AXP519_Brief_20230919.pdf
+            ├── AXP519_Datasheet_V1.0_cn.pdf
+            ├── AXP717B_Brief_20230306.pdf
+            ├── AXP717B_Datasheet_V1.0_en.pdf
+            ├── AXP717C_Brief_20230307.pdf
+            ├── AXP717C_Datasheet_V1.1_en.pdf
+            ├── T527_Brief_V0.90.pdf
+            ├── T527_Datasheet_V0.91.pdf
+            ├── T527_PINOUT_V0.91.xlsx
+            ├── T527_User_Manual_V0.92.pdf
+            └── 环保类报告
+                ├── S23083100601C-【全志】T527-ROHS.pdf
+                ├── S23083100601E-【全志】T527-ROHS.pdf
+                ├── S23083100602C-【全志】T527-REACH.pdf
+                ├── S23083100602E-【全志】T527-REACH.pdf
+                ├── S23083100603C-【全志】T527-HF.pdf
+                └── S23083100603E-【全志】T527-HF.pdf
+
+139 directories, 393 files

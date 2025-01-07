@@ -1,0 +1,178 @@
+---
+title:  AIOT Linux SDK Note
+subtitle:
+author: Allwinner
+changelog:
+- ver: 1.0
+  date: 2024.01.22
+  author: AWA1727
+  desc: 初始版本。
+- ver: 1.1
+  date: 2024.06.22
+  author: AWA0511
+  desc: add V1.1 sdk note
+- ver: 1.2
+  date: 2024.08.02
+  author: AWA0511
+  desc: add V1.2 sdk note
+- ver: 1.3
+  date: 2024.11.22
+  author: AWA0511
+  desc: add V1.3 sdk note
+- ver: 1.4
+  date: 2024.12.30
+  author: AWA0511
+  desc: add V1.4 sdk note
+---
+
+# 前言
+
+## 文档简介
+
+通过本文档可了解AIOT Linux SDK 不同版本对应的文档版本、主要内容变化。
+
+## 目标读者
+
+面向使用AIOT Linux开发者，想了解全志AIOT LINUX SDK的开发者们。
+
+## 适用范围
+
+A523/A527/T527 AIOT Linux平台。
+
+## 发布记录
+
+- V1.4 Note
+
+1. 新增：支持OTA(buildroot)
+2. 新增：支持weston AFBC压缩特性(buildroot)
+3. 新增：libuapi显示中间件支持对接libdrm显示
+4. 新增：新增文档仓库，详情见docs目录
+5. 新增：使能buildroot BR2_ROOTFS_OVERLAY 特性，支持板级预置板级配置文件；
+6. 优化：优化buildrot编译效率，支持buildroot toplevel并行编译(配置BR2_PER_PACKAGE_DIRECTORIES启用)
+7. 优化：优化buildroot demo代码结构(buildroot/package/auto demo)，兼容buildroot编译框架；
+8. 优化：优化buildroot/config代码结构，配置文件按照platform/源码目录层级归纳分类；
+
+7. 修复：时钟同步问题导致的DRM概率性超时问题
+8. 修复：修复asound.conf中的场景通路，解决使用PlaybackSPK时无声报错问题
+
+9. 不支持：vulkan完整方案，下一个版本V1.5迭代支持
+10. 不支持：yocto构建方案，下一个版本V1.5迭代支持
+11. 不支持：Gtreamer未适配CSI插件，下一个版本V1.5迭代支持
+
+12. 新增demo：
+
+```
+多媒体支持list:
+(1). audioenc_test(音频编码)
+(2). encoder_test(yuv编码jpg)
+(3). trecorderdemo(录像、录音)
+(4). tplayerdemo(视频、音频播放)
+(5). imagedecodedemo(图片软解)
+(6). decoder_test(单路、多路解码功能)
+(7). csi_test_usrptr(测试 csi sensor 拍照功能)
+(8). usbcam_test(测试 usb sensor 拍照功能)
+(9). recorder_demo(大小码流输出功能)
+```
+
+:::note
+板卡参考方案：
+
+1. A523 pro3_linux_aiot
+
+2. A527 pro2_linux_aiot
+
+3. T527 demo_linux_aiot
+
+:::
+
+:::note
+
+docs目录下的文档的更新可能存在延迟，即最新文档的获取，最新物料支持列表的获取，请通过全志客户服务平台(https://open.allwinnertech.com).
+
+:::
+
+- V1.3 Note
+
+1. 新增：支持ext4(uboot)
+2. 新增：支持pcie(uboot)
+3. 新增：支持gmac0(uboot)
+4. 新增：支持gstreamer编码功能
+5. 新增：支持GPU：ddk+wayland方案
+6. 新增：支持音频：PulseAudio
+7. 新增：支持UI：LVGL (buildroot)
+8. 新增：支持NPU基础方案(T527)
+9. 新增：支持RV(FreeRtos)基础方案(T527)
+10. 新增：支持Debian基础系统
+11. 新增：支持docker基础方案
+12. 新增：支持Buildroot:valhall + mali ddk+wayland(weston)(默认配置)
+13. 新增：支持Buildroot:panfrost + mesa+wayland(weston)
+14. 新增：支持Debian: panfrost + mesa + gnome(wayland)
+15. 新增：支持Debian: panfrost + mesa + xface/lxde(x11)(默认配置)
+16. 新增：支持工具: mtop(带宽查看)
+17. 新增：支持工具：cpu_monitor(cpu占用率和内存调试查看)
+18. 优化：优化HDMI信号质量(A527/T527)
+19. 优化：电源质量<新增dvm功能,以优化板卡供电方案对大电流场景的兼容性>
+20. 优化：Bias电源设置策略<新增自动校正功能,防止误配置导致的IO功能异常>
+21. 修复：HDMI输出概率性无信号问题
+22. 修复：ACIN方案下：U盘概率性不识别
+23. 不支持：AFBC完整方案，下一个版本V1.4迭代支持
+24. 不支持：vulkan完整方案，下一个版本V1.4迭代支持
+25. 不支持：yocto构建方案，规划支持中
+26. 新增若干文档，详情见全志客户服务平台工具:https://open.allwinnertech.com
+
+:::note
+板卡参考方案：
+
+1. A523  pro3_linux_aiot
+
+2. A527  pro2_linux_aiot
+
+3. T527  demo_linux_aiot
+:::
+
+- V1.2 Note
+
+1. 新增：支持完整DRM功能(lvds/edp/rgb/mipi(单/双)/HDMI-OUT(A527/T527)) (基于Linux-5.15)；
+2. 新增：支持bootlogo显示功能(基于Linux-5.15)；
+4. 新增：支持快充方案(A527 D10参考方案)(基于Linux-5.15)；
+5. 新增：支持SDIO细调功能(基于Linux-5.15)；
+6. 新增：支持CSI ISP功能(基于Linux-5.15)；
+7. 修复：休眠重启问题(基于Linux-5.15)；
+8. 修复：过温(软件)不关机问题(基于Linux-5.15)；
+9. 修复：使用RV情况下，ARM端:GPIO中断概率性不生效问题(T527)(基于Linux-5.15)；
+10. 修复：GPU内存溢出问题(基于Linux-5.15)；
+11. 不支持：DP OUT功能，下一个版本迭代支持
+
+:::note
+板卡参考方案：
+
+1. A523 pro3_linux_aiot
+
+2. A527 pro2_linux_aiot
+
+3. T527 demo_linux_aiot
+:::
+
+- V1.1 Note
+
+1. 新增：支持A523/A527/T527 bsp/buildroot(基础系统)
+2. 新增：可支持A523/A527 ubuntu-22.04系统(基础系统)
+2. 新增：支持T527 HDMI OUT功能
+3. 新增：支持usb ncm/rndis
+4. 修复：休眠唤醒屏幕概率性不亮
+5. 修复：休眠唤醒屏幕概率性闪烁问题
+6. 不支持：A523/A527 不支持bootlogo, 下一个版本迭代支持
+7. 不支持：A527 不支持HDMI OUT功能, 下一个版本迭代支持
+
+- V1.0 Note
+
+1. 可支持ubuntu-22.04文件系统；
+2. 支持linux-5.15.147内核版本；
+3. 支持同编同解，多编多解，大小码流编码等；
+4. 支持DRM显示框架；
+5. 支持Panfrost驱动；
+6. 支持支持Mesa；
+7. 支持Xorg；
+8. 支持glamor加速；
+9. 支持Gstreamer接口；
+10. 支持网络浏览器播放视频
