@@ -23,6 +23,10 @@ changelog:
   date: 2024.12.30
   author: AWA0511
   desc: add V1.4 sdk note
+- ver: 1.4.5
+  date: 2025.3.27
+  author: AWA0511
+  desc: add V1.4.5 sdk note
 ---
 
 # 前言
@@ -37,9 +41,67 @@ changelog:
 
 ## 适用范围
 
-A523/A527/T527 AIOT Linux平台。
+A523/A527/T527/A733/T736 AIOT Linux平台。
 
 ## 发布记录
+
+- V1.4.5(alpha) Note
+
+**新增A733/T736 芯片方案支持(Linux5.15 LTS)**
+
+1. 支持AI基础系统(基于buildroot)
+2. 支持buildroot基础系统(buildroot 2022.05)
+3. 支持debian基础系统(基于debian11)
+4. 支持以太网(kernel)
+5. 支持PCIE(kernel)
+6. 支持显示完成方案(MIPI/LVDS/eDP/HDMI out)
+7. 支持weston(buildroot, 默认)
+8. 支持xfce(debian, 默认)
+9. 支持boot U盘识别
+10. boot支持PCIE
+11. boot支持SSD
+12. 支持EMMC/UFS
+13.  支持alsa
+14.  支持pulseaudio
+
+**未支持项(下一个版本V1.4.8或者补丁形式支持):**
+
+1. boot支持双存储
+2. boot支持NVME
+3. OTA(buildroot)
+4. yocto支持
+5. chrome浏览器加速支持
+6. wayland方案支持
+7.  gstreamer适配CSI
+8.  gstreamer编解码
+9.  nor方案支持
+10.  extlinux支持
+
+**针对A523/A527/T527平台做相应改进和问题修复**
+
+1. 新增支持yocto(5.1)(默认T527参考方案)
+2. 新增支持双存储方案支持(nor+EMMC/nor+SSD)
+3. 新增支持NVME(boot)
+4. 默认集成V1.4发布版本补丁
+4.1. 更新/优化显示模块
+4.2. 支持mipi video burst mode，改善mipi接口屏打静电时闪屏问题
+5. 修复FB框架双buffer送显异常问题
+6. 修复板型默认显示绑定关系异常
+7. 修复weston通过gbm申请buffer报错问题
+
+:::note
+备注：板卡参考方案：
+
+1. A523 pro3_linux_aiot
+
+2. A527 pro2_linux_aiot
+
+3. T527 demo_linux_aiot
+
+4. A733 pro3
+
+5. T733 demo_aiot
+:::
 
 - V1.4 Note
 
@@ -107,7 +169,7 @@ docs目录下的文档的更新可能存在延迟，即最新文档的获取，�
 12. 新增：支持Buildroot:valhall + mali ddk+wayland(weston)(默认配置)
 13. 新增：支持Buildroot:panfrost + mesa+wayland(weston)
 14. 新增：支持Debian: panfrost + mesa + gnome(wayland)
-15. 新增：支持Debian: panfrost + mesa + xface/lxde(x11)(默认配置)
+15. 新增：支持Debian: panfrost + mesa + xfce/lxde(x11)(默认配置)
 16. 新增：支持工具: mtop(带宽查看)
 17. 新增：支持工具：cpu_monitor(cpu占用率和内存调试查看)
 18. 优化：优化HDMI信号质量(A527/T527)
