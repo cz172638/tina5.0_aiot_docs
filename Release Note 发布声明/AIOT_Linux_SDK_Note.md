@@ -27,6 +27,10 @@ changelog:
   date: 2025.3.27
   author: AWA0511
   desc: add V1.4.5 sdk note
+- ver: 1.4.6
+  date: 2025.6.09
+  author: AWA0511
+  desc: add V1.4.6 sdk note
 ---
 
 # 前言
@@ -44,6 +48,71 @@ changelog:
 A523/A527/T527/A733/T736 AIOT Linux平台。
 
 ## 发布记录
+
+- V1.4.6(alpha) Note
+
+**公共部分**
+
+1. 解决ubuntu下Linux LiveSuit工具概率性烧录失败问题
+2. 解决nvme概率性启动异常问题
+3. 解决插着type-c启动，概率性进入充电模式问题
+4. 新增支持ros2方案(debian)
+5. 新增支持wifi/bt(debian)
+6. 新增支持TP(debian：T527 demo/T736 demo方案)
+7. 新增支持gstreamer适配CSI(demo sensor: imx319)
+8. 新增支持boot支持双存储(nor+emmc/nor+ssd)
+9. 新增支持boot支持NVME
+10. 新增支持extlinux支持(与AW启动方式二选1)
+11. 优化edp信号通信质量
+12. 优化部分MMC读写速率
+13. 优化PCIE通信速率
+14. 优化音频策略
+
+**A733/T736芯片系列**
+
+1. 新增支持nor方案，参考(方案 T736 evb_nor)
+2. 新增支持ufs自动烧写功能
+3. 新增支持boot支持gmac
+4. 新增支持安全烧写功能(默认关闭)
+5. 新增支持G2D
+6. 新增支持OTA方案(buildroot)
+7. 新增支持gstreamer硬件解码功能
+8. 新增支持ISP功能
+9. 新增支持GPU硬件加速(默认方案：debian：X11/ buildroot:wayland)
+10. 新增支持yocto方案(T736)
+11. 优化dram驱动,增强(LPDDR5/LPDDR4)兼容性,dram版本升级至V0.601
+12. 优化VF,增强CPU兼容性,VF版本升级至V0.9
+13. 优化wifi(AIC8800)稳定性,驱动版本升级至20250410-008
+
+**A523/A527/T527芯片系列**
+
+1. 新增GPU使用方式适配(vulkan/gbm+kms/wayland)
+2. 新增支持chromium(适配硬件加速)(补丁方式提供)
+
+**未支持项(下一个版本或者补丁形式支持):**
+
+1. sdcard/nor启动下识别ufs设备(下一版本支持)
+2. chrome浏览器加速支持 (A733/T736系列支持)(规划中)
+3. AW启动方式与extlinux启动方式兼容(下一版本支持)
+4. 4K UI点对点方案支持(规划中)
+5. 方案丰富: OpenCL demo方案应用/Debian NPU方案应用/DP OUT方案应用/快充方案应用/多屏方案应用/DPDK方案应用等(下一版本迭代)
+
+:::note
+备注：板卡参考方案：
+
+1. A523 pro3_linux_aiot
+
+2. A527 pro2_linux_aiot
+
+3. T527 demo_linux_aiot
+
+4. A733 pro3
+
+5. T736 demo_aiot
+
+5. T736 evb_nor
+:::
+
 
 - V1.4.5(alpha) Note
 
@@ -72,10 +141,10 @@ A523/A527/T527/A733/T736 AIOT Linux平台。
 4. yocto支持
 5. chrome浏览器加速支持
 6. wayland方案支持
-7.  gstreamer适配CSI
-8.  gstreamer编解码
-9.  nor方案支持
-10.  extlinux支持
+7. gstreamer适配CSI
+8. gstreamer编解码
+9. nor方案支持
+10. extlinux支持
 
 **针对A523/A527/T527平台做相应改进和问题修复**
 
@@ -100,7 +169,7 @@ A523/A527/T527/A733/T736 AIOT Linux平台。
 
 4. A733 pro3
 
-5. T733 demo_aiot
+5. T736 demo_aiot
 :::
 
 - V1.4 Note
