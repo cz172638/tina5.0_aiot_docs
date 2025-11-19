@@ -1,0 +1,231 @@
+﻿20250731：
+主页：
+P08  UP4的pin8/9的0R接地电阻改为NC；HUSB311的VBUS pin网络接到OVP前级。
+P10 增加AC101和AC101B的默认BOM选贴配置。
+P12 删除TP12、TP13。
+P21 FEL测试点从ESD和串阻前端引出。
+
+Option页：
+P08  UP4的pin8/9的0R接地电阻改为NC； 
+P08-1  UP4的pin8/9的0R接地电阻改为NC； HUSB311的VBUS pin网络接到OVP前级。预留的VBUS-DET电路上拉电源改到OVP前端，同时监测IO预留串阻接到AXP517的pin38，删除原来预留到PL10的电阻；分压阻值修改。同时IO预留了兼容到pin22的分支通路。
+P08-2 预留OVP电路，HUSB311的VBUS pin和预留的MOS泄放电路均接到OVP前端。
+P07 无电池方案（不带BMU），DC8SET的上拉默认改到PS。
+
+
+
+********************************************************************************************
+20250618：
+主页：
+P12 Y1的Value值中的精度改为10ppm；
+P10 更新DP1.4&USB3.1未使用条件下的power不能悬空的注释。
+P07 VDD-SYS 增加EMMC方案的兼容注释，VCC-SENSOR预留兼容VCC-PL供电。
+P11 所有电阻改为0201封装，GS-INT串接0R电阻。
+P22 GS-INT预留0R连接到PL11。
+
+Option页：
+P07 RP367、RP368默认NC，增加RP370/RP371，CP48改为10uF。
+P08-2 修改CC-INT连接到PL口；增加欧盟认证预留MOS开关泄放电路；删除RU148；更新充电路径走线宽度注释，线宽需满足45W过流要求。
+P15 增加HDMI IN参考。
+P20 删除AUX预留的IO控制电路（SBU1-DC）。
+P08-2 RP457改为43K。
+
+********************************************************************************************
+20250603：
+主页：
+P16 更新AC107 NC情况下，RA5/RA6的贴片注释。
+P07 删除VDD-COMB1，内部和comb0已经合并供电；VCC-PM增加BLDO5的兼容设计；
+P07 删除DCIN和PS之间的0R，直接短接两个网络，增加铜皮宽度注释提醒。
+P20 UU3的供电增加兼容DCDC1的方案；EN、SEL的上拉预留到DCDC1。
+P08 RP446、RP249封装改0201;CP123默认贴片。
+
+option页：(调整P08命名为P08/P08-1/P08-2，方便changelist记录）
+P07 删除VDD-COMB1，内部和comb0已经合并供电；VCC-PM增加BLDO5的兼容设计；
+P08-2 修改AXP2602的GND为GND-1（接电池负极）；更正Q20的pin8电气连接（接S极）。
+P20 U8903的供电增加兼容DCDC1的方案；EN、SEL的上拉预留到DCDC1。
+P08 RP249改为0201封装。
+P08-1 RP446、RP249封装改0201;修改page name。
+
+********************************************************************************************
+20250407：
+1、重排camera 页 symbol。
+2、重排Dual MIPI LCM 页symbol。
+3、重排DP/EDP 页symbol。
+4、重排08 Quick Charger_2S lion 页symbol。
+5、重排25 PCIE3.0 页symbol。
+6、重排20 USB0/TYPEC 页symbol。
+
+20250328：
+1、更新JU1 symbol。
+2、更新TEST point symbol信息显示。
+3、重排ACIN 页 symbol。
+
+20250318：
+PAGE08：ACIN
+1、R90电阻改为1K，R52电阻改为200K。
+PAGE08：AXP515
+1、增加注释表，说明AXP515和AXP517外围电路差异点。
+2、增加RP445，NC，预留连接AXP517 INT到CC-INT。
+3、增加RP446/RP447/RP448，没有外挂boost，VCONN要连接BMU的VSYS。
+4、5V 充电输入OVP改为BCT7935EZC-TR/AW3290X；艾为 AW3290X OVP阈值为5~6V，AW3291X阈值更高，选型注意适配。
+PAGE08：AXP517
+1、新增独立使用AXP517原理图。
+
+20250313：
+1、总页数由33页改为27页，可替换的option页改为和主页中相同的页码，重排off-page。
+2、RGMII0 由28页改为24页，PCIE 由30页改为25页，Dual MIPI DSI 由31页改为26页，DP/EDP由32页改为27页；
+3、修正注释格式，红色NOTE，绿色Attention。
+4、修正TWI MAP，TWI8移除HUSB311，TWI3/TWI4接CAMERA1/CAMERA2；VCC-PH 默认为3.3V，VCC-PJ默认为1.8V， VCC-PL默认为3.3V。
+
+PAGE08：双节快充
+1、重排器件位置对齐格点，修正Q5 MOS管8管脚信息错误，由EPAD改为S极，管脚原本连接无问题。
+PAGE13：UFS
+1、RM38改为10K，RM41改为20K/NC，适配一些RST内部强下拉的UFS颗粒。使用UFS3.X颗粒直接上拉到1.2V的VCC-UFS-IO；UFS2.2颗粒分压1.8V的VCC-UFS-IO。删除DXLDO-OUT。
+PAGE19：19 USB2.0/TYPEC/5VIN(ACIN)
+1、重排页面划分。
+
+20250308：
+PAGE07:
+1、删除CLDO5 RP2，USB PHY统一用3.3V供电。
+2、对齐POWER TREE的电源配置。
+PAGE08：
+1、增加独立适配ACIN版本的AXP515电路页，修改OVP/HUSB311器件的VBUS命名，对齐ACIN电路输入。
+2、NO BMU页面的CLDO1删除预留1.8V的 USB STB电源，统一供3.3V。
+PAGE20：
+1、删除USB2-DP/DM信号和跳选器件，只提供USB0通路。
+2、重新整理20V耐压器件的输入输出信号名。
+3、20 SWTICH和5V SWITCH为2选1配置，3.0页默认选20V，2.0页默认选5V。
+4、3.0页面增加外挂BOOST 5V电路。
+5、修正BCT 20V器件symbol更新管脚命名错误。
+6、TYPEC座子信号分别连接到 20V器件和5V器件，2选1，不用的器件直接删除。
+7、修正信号的signal连接关系。
+8、2.0页面删除多余的CC1/CC2连接off-page。
+PAGE26：双节快充
+1、删除2601标识，只提供2602设计。
+2、VBUS-AXP318 电压调整为4.6V。FB电阻R2由18k调整到15k。
+3、删除RU31，AXP2602-IRQ直连PL8。
+PAGE30：PCIE
+1、PCIE 3个控制信号预留1.8V转3.3V电平转换器件。
+2、DCDC2偏置电源增加C8924/C8925两个滤波电容，需要靠近PCIE外设端放置。
+PAGE31：
+1、增加背光输入电流标注。大电流接法推荐VBAT-515。
+2、增加4个CTP信号的GPIO分配，11页GPIO增加串阻，默认NC。
+PAGE32：
+1、DP-HPD增加VCC33-LCD上拉预留，R616为J2座子上拉，R242为EDP座子上拉， 默认NC。
+
+20250115：
+PAGE16：
+1、HSCL/HSDA串阻由0R换为100R。
+2、DH11二极管为了满足CTS漏电小于1.8uA需求，更换为BAT54W-G型号，漏电小于1uA。
+
+20250104：
+PAGE08：
+1、增加VBUS-DET电路，用于欧盟EN62680，标案GPIO分配 PL10，如果不需要待机IO可以用PH4。
+2、移除AXP2601信息，只适配AXP2602。
+PAGE09：
+1、移除0.3V注释。
+PAGE10：
+1、移除烧录注释表格里面的USB2信息，A733只能使用USB0进行烧录。
+2、R9修改为NC/2.2K，EMMC启动顺序默认EMMC_USER。
+3、修改SOC SYMBOL的NOTE信息：
+1.使用combo0时，DP和U3的PMA配置不同 
+在SDK DTS中的配置： DP=2/3/0/1 ；TYPEC=0/1/2/3。 
+2.symbol的P/N顺序和走线网络的P/N顺序需要交换。 
+3.DP和USB3同时使用时，DP只能连接2个通道，不能支持1.62G以下速率的设备。
+PAGE11：
+1、增加PF口注释，不要用于控制或者光电外设。
+2、增加PL口注释，SBU信号只是预留。如果GPIO紧张，可以优先移除SBU功能。
+PAGE12：
+1、增加电容布局注释，0402电容优先布局SOC背面，当背面空间不允许，靠近SOC正面450mil内放置。
+PAGE13：
+1、增加VCC-UFS注释，要求走线宽度要＞30mil，改善纹波。
+PAGE16：
+1、RA R8注释由0R修改为NC，软件默认配置MIC4。
+
+20241230：
+PAGE07
+1、RP296/RP297封装由0603改为0201。
+2、移除RP7，VCC33-18-USB只从ALDO1供3.3V，不需要3.3/1.8V兼容电阻。
+PAGE11
+1、移除VCC-PD的C11 10uF电容。
+PAGE12
+1、VDD-CPUL电容容值调整，C46由1uF调整为100nF。
+2、VDD-GPU电容容值调整，C263调整为0603 22uF，必须靠近SOC放置。
+PAGE13
+1、UFS-RST-N预留对地1nf电容位。
+其他：
+1、真闪LED供电输入增加VBAT-515供电路径。
+2、PA输出的串阻封装由0201改为0402。
+3、BCT4690E（BCT4480）的CC-IN管脚增加0R串阻，对于外挂CC芯片的应用，可以NC掉CC-IN信号，规避过孔上焊盘
+带来的PCB加价。
+4、修正部分RLC的BOM value。
+5、AXP515页，在VBUS-AXP515和VMID中增加1个SS24肖特基二极管，通流需求2A，压降小于0.5V。预留给AXP517 debug，AXP515不需要。
+
+20241222：
+PAGE07 
+1、增加 LDO2V5-INPUT输出电压以及分压电阻的注释，推荐DCDC输出2.25V电压，进一步提高LDO效率。
+2、增加AXP318 TS管脚0R电阻用于JITEA的注释。
+3、增加DCDC2的VDD-DRAM 0R串阻可删除的注释。
+PAGE08
+1、增加预留PCB板级NTC温度采集电路，AVCC上拉，GPADC4采集。
+2、AXP2601/2602 采样电阻封装换为1206。
+3、AXP515 BAT输出和VBAT中间增加0805 NC电阻位RP369，当使用AXP517时，RP246和RP369只贴0R，保证通流能力。
+PAGE10
+1、增加GPADC4连接。
+2、UFS HDMI 注释修改，当不使用模块时，电源不能悬空，信号可以悬空。
+PAGE12
+1、增加电容布局注释，CPUB CPUL SYS GPU电容均要靠近SOC放置。
+2、增加大电容放置需要靠近SOC的注释；增加CPUB/CPUL 底部推荐放置0402 10uF电容的注释。
+PAGE14
+1、增加DCDC的VBAT-515输入电流需求注释。
+PAGE15
+1、UFS-VCCQ增加两个0402 4.7uF电容位置，其中一个需要上件，预留给AUTOFAST模式开启后频繁轻重载切换改善电源质量。
+PAGE16
+1、修改NOTE1内容为：NC AC107，使用AC101B ADC*3，可支持MIC*2/ECM MIC*1。 NC AC107，使用AC101 ADC*2，可支持MIC*2。
+2、删除页面中出现的版权内容。
+PAGE19
+1、针对金属TF卡座，在DET管脚增加SD-DET串阻，同时SD-DET接到QC1 G极用于开电控制。
+PAGE30
+1、修正PCIE时钟发生器晶振VALUE值，改为25MHz。
+
+20241215：
+1、刷新元器件命名。
+2、刷新PAGE12345页信息。
+3、刷新各PAGE title信息。
+4、整理元器件value信息。
+
+20241210：
+PAGE08
+1、修正RP301 RP301接线错误，交换SCK SDA。
+2、增加AXP2601/2602外挂电量计，用于适配(EU) 2023/1670协议要求。当使用外挂电量计时，电池负极网络由GND改为VBAT-GND，先经过电量计的采样电阻再接到GND。
+3、RP271 RP272上拉改为VCC-PL。
+4、增加OVP使用注释。
+5、删除AXP515 VSYS输出电感的1uH-3A信息。
+
+PAGE10
+1、DDR PARA参数序号重排，起始由1改为由0开始。
+2、C0201 4.7uF电容封装改为C0402，PCB上放TOP面靠近SOC放置。
+3、删除combo模块附近重复的描述。
+4、UFS/HDMI供电描述修改，如果这两个模块不使用，对于的0.8V/1.8V供电需要提供，避免漏电。
+
+PAGE11
+1、PH0/PH1增加0R串阻，用于跳选单MIPI/双MIPI的的TP TWI信号选择。
+2、PL12增加对AXP519页的off-page。
+3、删除PB9/PB10多余的CC TWI网络。
+
+PAGE12
+1、晶振默认使用26M，其他晶振规格删除。
+
+PAGE17
+1、修正UA1 UA2 UA3 UA4的C1/A1管脚极性和座子不对应，交换SPK+/-线序。
+2、删除RA90 RA91，删除VCC-PH的上拉；AMP TWI修改到PB GPIO，上拉到VCC-IO
+
+PAGE19
+1、SDC0增加0R串阻，用于调节排线卡座的SI问题；PCB直连卡座可以costdown。
+
+PAGE20
+1、增加TYPEC SIGNAL SWITCH带高压防护器件，用于高压充、快充的TYPEC口 SBU DPDM耐压防护。
+
+OPTION页：
+PAGE 08 Quick Charger_2S lion
+1、增加电量计GND1网络和电池负极的连接关系。
+2、修正器件位号，统一为RP前缀。

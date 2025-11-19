@@ -31,6 +31,10 @@ changelog:
   date: 2025.6.09
   author: AWA0511
   desc: add V1.4.6 sdk note
+- ver: 1.4.8
+  date: 2025.9.30
+  author: AWA0511
+  desc: add V1.4.8 sdk note
 ---
 
 # 前言
@@ -48,6 +52,50 @@ changelog:
 A523/A527/T527/A733/T736 AIOT Linux平台。
 
 ## 发布记录
+- V1.4.8(alpha) Note
+
+**公共部分**
+
+1. 解决 运行部分程序后，weston显示异常的问题(Buildroot)
+2. 解决 4线或9线 uart 在特定场景下导致系统卡死的问题
+3. 解决 HDMI 启动后无信号的问题
+4. 新增支持 Linux 6.6 LTS 内核版本
+5. 新增支持 sdcard/nor启动下识别ufs设备
+6. 新增支持 DPDK 方案
+7. 新增支持 Gstreamer + CSI 框架 (带ISP效果)
+8. 新增支持 UFS / EMMC 烧录同一固件
+9. 新增支持 AW启动方式与extlinux启动方式兼容
+10. 新增支持 OpenCL / GL 演示 Demo (Buildroot)
+11. 新增支持 Tiger ISP 效果调试工具支持
+12. 新增支持 DFS 动态调频 (默认关闭)
+13. 新增支持dragonboard板卡测试套件（linux-6.6）
+14. 新增debian NPU基础方案
+15. 新增支持DP OUT功能支持
+16. 新增weston版本升级至12.0.1(buildroot)
+17. 优化 hdmi 接口兼容性
+18. 优化deb包格式(debian系统)
+19. 优化启动方式：兼容aw启动方式和extlinux启动方式
+
+**A733/T736芯片系列**
+
+1. 解决 特定 16G 及以上 LPDDR5 物料无法烧录启动的问题
+2. 新增支持 Super Standby
+3. 新增支持 dp out 显示输出
+4. 新增支持 电池快充方案适配 (AXP517)
+5. 优化 edp 接口兼容性
+6. 优化 pcie 接口兼容性, 改善nvme识别成功率
+
+**A523/A527/T527芯片系列**
+
+1. 新增支持 RV, A55 核间通信(amp)方案(参考: T527 demo_linux_aiot_amp)
+
+
+**未支持项(下一个版本或者补丁形式支持):**
+
+1. AFBC完成通路支持(下一版本迭代)
+2. 支持 xorg 使用 DE 合成(下一版本迭代)
+3. chrome浏览器加速支持 (A733/T736系列支持)(规划中)
+4. 4K UI点对点方案支持(规划中)
 
 - V1.4.6(alpha) Note
 
