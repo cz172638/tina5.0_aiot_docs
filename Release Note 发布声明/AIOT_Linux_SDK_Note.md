@@ -35,6 +35,14 @@ changelog:
   date: 2025.9.30
   author: AWA0511
   desc: add V1.4.8 sdk note
+- ver: 1.4.9
+  date: 2026.3.30
+  author: KPA0603
+  desc: add V1.4.9 sdk note
+- ver: 1.4.10
+  date: 2026.5.6
+  author: KPA0603
+  desc: add V1.4.10 sdk note
 ---
 
 # 前言
@@ -49,9 +57,95 @@ changelog:
 
 ## 适用范围
 
-A523/A527/T527/A733/T736 AIOT Linux平台。
+A523/A527/T527/A733/T736/A537 AIOT Linux平台。
 
 ## 发布记录
+
+- V1.4.10(alpha) Note
+
+**A733/T736芯片系列**
+
+1. 修复 UART 引脚错误
+2. 支持 HEVC 编码器（Debian & Buildroot）
+
+**A537芯片系列（本次重点更新）**
+
+1. **重要：新增A537芯片 BSP 支持**
+2. 支持 Buildroot & Debian 基础构建
+3. 支持硬件编解码功能
+4. 支持 SPI-NAND 安全启动
+5. 支持多种外设配置（UART、LRADC、GPADC、PWM、SPI-NG、IRRX、IRTX、LEDC 等）
+6. 支持网络功能（GMAC、WiFi/蓝牙）
+7. 支持显示功能（DRM、DRM_EDP、PPU）
+8. 支持电源管理功能（HUSB311、AXP1530、待机、CPU频率、热插拔）
+9. 支持存储功能（EXFAT/FAT、SDMMC、SPI-NAND）
+10. 支持系统功能（HWSPINLOCK、MSGBOX、NSI、Timer、VE）
+11. 支持多媒体功能（VIN、音频）
+12. 支持启动引导功能（U-Boot NAND、时钟、boot0）
+13. 支持安全功能（SMC、SID）
+14. 支持 PCIe、CE 加密引擎等功能
+
+**未支持项(下一个版本或者补丁形式支持):**
+
+1. A333 系列芯片 BSP 支持（进行中）
+
+- V1.4.9(alpha) Note
+
+**公共部分**
+
+1. 解决 uart-ng 低波特率传输错误问题
+2. 解决 pmic usb 功率限制竞争条件和原子上下文问题
+3. 解决 部分 avi 视频播放卡死问题
+4. 解决 特定场景下 Gstreamer v4l2src 出现死锁的问题
+5. 解决 weston 的 transform 失效问题 (Buildroot)
+6. 解决 非首次构建时未自动清除配置的问题 (Debian)
+7. 解决 卡启动失败问题
+8. 解决 raw sensor 与 yuv sensor 混接时取图异常的问题
+9. 新增支持 uart 模块 rs485 9bit 和 flow ctrl
+10. 新增支持 dw pcie 驱动
+11. 新增支持 nvme rootfs
+12. 新增支持 双显下 bootlogo 单独创建 fb
+13. 新增支持 deb 包标准化安装 (Debian)
+14. 新增支持 Gstreamer v4l2src 从配置文件读取 ISP 参数
+15. 新增支持 nand 存储介质下 rootfs 构建
+16. 新增支持 Gstreamer waylandsink 显示延迟统计信息
+17. 新增支持 spi-nand 启动
+18. 新增支持 通过 spl-dts 选择 phykey 类型
+19. 新增支持 通过 sys_config 配置 Debug 串口波特率
+20. 优化 twi 外设兼容性
+21. 优化 libcedarc 和 libcedarx 编解码性能
+22. 优化 构建与打包工具
+
+**A733/T736芯片系列**
+
+1. 解决 部分不合理的异常打印
+2. 解决 GPU 唤醒时的空指针/死锁问题
+3. 解决 linux-6.6 的 nvme io 超时问题
+4. 解决 UART 引脚配置错误问题
+5. 新增支持 pstore 在系统崩溃时, 将错误日志转写到存储介质
+6. 新增支持 spinand 物料 GD5F4GQ6UEY1G
+7. 新增支持 spinor 安全启动
+8. 新增支持 demo_aiot 板型
+9. 优化 ddr 驱动性能
+10. 优化 USB3.0 兼容性
+
+**A523/A527/T527芯片系列**
+
+1. 解决 usb 重启压力测试下的复位超时问题
+2. 解决 GPU 在特定场景下工作异常的问题
+3. 解决 特定场景下 raw sensor 通过 v4l2src 取图失败的问题(Debian)
+4. 新增支持 panfrost 架构GPU驱动
+5. 新增支持 linux-6.6 内核 standby 功能
+6. 新增支持 spi-nand 物料 XT26G01D 和 GD5F1GM7UEYIG
+7. 新增支持 quick-config 进行 USB3.0 和 PCIE 配置切换
+8. 新增支持 spinand 介质 buildroot rootfs 配置参考 (pro3_linux_aiot_nand)
+
+**未支持项(下一个版本或者补丁形式支持):**
+
+1. chrome浏览器加速支持 (A733/T736系列支持) (规划中)
+2. 4K UI点对点方案支持 (规划中)
+3. VIN框架兼容v4l2标准调用方式 (规划中)
+
 - V1.4.8(alpha) Note
 
 **公共部分**
