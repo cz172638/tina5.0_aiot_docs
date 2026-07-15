@@ -43,6 +43,10 @@ changelog:
   date: 2026.5.6
   author: KPA0603
   desc: add V1.4.10 sdk note
+- ver: 1.5.0
+  date: 2026.7.13
+  author: KPA0603
+  desc: add V1.5.0 sdk note
 ---
 
 # 前言
@@ -57,9 +61,71 @@ changelog:
 
 ## 适用范围
 
-A523/A527/T527/A733/T736/A537 AIOT Linux平台。
+A523/A527/T527/A733/T736/A537/A333 AIOT Linux平台。
 
 ## 发布记录
+
+- V1.5.0(alpha) Note
+
+**公共部分**
+
+**Buildroot 相关**
+
+1. **重要：支持 Weston 完整硬件加速通路，包括 DE composite、G2D rotate、DE cursor 和 dmabuffer direct_display**
+2. 支持 eudev 自动挂载 SD、mmcblk、NVMe 等设备
+3. 修复 G2D sample 编译错误，并重构为 DMA-HEAP 分配方式
+4. 修复 构建时 clean 无效的问题
+5. 修复 GStreamer 部分 plugin 未编译的问题，支持更多音视频格式编解码
+6. 修复 部分配置下 pulseaudio demo 未编译的问题
+
+**Debian 相关**
+
+1. **重要：支持 Xorg 完整硬件加速通路，包括 DE composite、G2D rotate、DE cursor 和 dmabuffer direct_display**
+2. **注意：当前 Debian 下所有 GPU 为 Mali G57 的芯片（包括 A523/A527/T527/A537/A333）由默认使用开源通路（Mesa3D + panfrost）改为使用商用通路（Mali DDK + Valhall），此改动将带来约 25% 的 GPU 性能提升，但对 API 的支持情况可能会有些许差异，请知悉。**
+3. 支持 图形系统 deb 包标准化，新增并拆分 xfwm4、Mali X11 GPU 包
+
+**图形显示与多媒体**
+
+1. **重要：支持 Cedar 解码库完整 AFBC 通路，最高支持 4K@60f 播放，具体参考芯片规格**
+2. 支持 Uboot 下 Bootlogo 缩放和旋转显示
+3. 修复 pulseaudio 配置问题，此问题曾导致部分平台下 gst 播放媒体时音频缺失。
+4. 修复 gst-play 在快进时有小概率退出的问题
+5. 修复 gst-play 在播放部分媒体时，快进将导致静音的问题
+6. 优化 环境变量配置，增加常用变量缺省值，现在可以随意使用 gst-play、glmark 等命令而无需进行额外配置
+
+**基础功能与稳定性**
+
+1. 修复 部分编译配置下 autoconfig 会导致 rootfs 设置异常的问题，并优化 kernel patch 检查流程
+2. 修复 DSI 中断风暴问题，提升运行稳定性
+3. 修复 PCIe/PHY noirq 阶段唤醒异常问题，提升系统休眠唤醒可靠性
+4. 修复 combo0 与 DP 共享场景下 USB u2only 配置异常问题
+5. 修复 USB DMA 中断清除问题，降低 USB 传输异常风险
+6. 修复 HDMI detect 冗余日志问题，减少系统日志干扰
+7. 更新 AIC8800 驱动和固件，优化 Wi-Fi 和 Bluetooth 稳定性
+
+**A733/T736 芯片系列**
+
+1. **重要：支持 Chrome 浏览器GPU硬件加速通路**
+2. 商用版 GPU 库 支持 GLX 与 gallium swrast
+3. 修复 Xorg(Debian) 下 glxinfo 异常返回的问题
+4. 修复 UART 引脚配置错误
+5. 修复 Buildroot 下 exFAT、NTFS 文件系统支持缺失的问题
+
+**A523/A527/T527 芯片系列**
+
+1. 修复 Mali-Valhall GPU 驱动在 Linux 5.15 和 6.6 内核下的兼容性问题
+2. 修复 Weston 采用 GPU 渲染时的光标残影问题
+3. 降低 GPU DVFS 控制台打印等级，减少冗余的日志输出
+
+**A333/A537 芯片系列**
+
+1. 新增 A333 系列芯片支持
+2. 修复休眠唤醒后 xHCI 异常导致后续休眠失败的问题
+3. 修复特定 reset 路径下 CPUIDLE 状态机异常问题
+
+**未支持项(下一个版本或者补丁形式支持):**
+
+1. VIN框架兼容v4l2标准调用方式 (规划中)
 
 - V1.4.10(alpha) Note
 
